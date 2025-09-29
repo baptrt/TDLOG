@@ -1,0 +1,34 @@
+name: Exercises
+
+on: [pull_request, push]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        ref: ${{ github.event.pull_request.head.sha || github.ref }}
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        activate-environment: env_exercises
+        environment-file: environment.yml
+        python-version: "3.13"
+        miniconda-version: "latest"
+        auto-update-conda: true
+        auto-activate-base: false
+    - name: List packages
+      if: always()
+      run: |
+        conda list
+    - name: Format with black
+      if: always()
+      run: |
+        black --check --diff .
+    - name: Lint with flake8
+      if: always()
+      run: |
+        flake8 .

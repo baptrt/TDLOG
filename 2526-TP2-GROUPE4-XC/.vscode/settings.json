@@ -1,0 +1,30 @@
+{
+    "github.copilot.editor.enableCodeActions": false,
+    "github.copilot.renameSuggestions.triggerAutomatically": false,
+    "chat.commandCenter.enabled": false,
+    "github.copilot.enable": false,
+    "python.analysis.typeCheckingMode": "strict",
+    "files.associations": {
+        "*.ipynb": "jupyter-notebook"
+    }
+    "[python]": {
+        "editor.folding": true,
+        "editor.foldingHighlight": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.lineNumbers": "on",
+        "files.exclude": {
+            "**/.ipynb_checkpoints": true,
+            "**/.mypy_cache": true,
+            "**/.venv": true,
+            "**/__pycache__": true,
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/Thumbs.db": true
+        },
+    }
+}

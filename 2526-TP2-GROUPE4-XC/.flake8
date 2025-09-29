@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 120
+# may conflict with black:
+ignore = E1, E2, E3, W5, E704
